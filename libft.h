@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/07 23:05:32 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/08 23:08:37 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,25 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
-//*ft_memccpy
+void		*ft_memccpy(void *dest, const void *src, int c, size_t n);
 //*ft_memchr
-//ft_memcmp
-//*ft_memcpy
+int			ft_memcmp(const void *s1, const void *s2, size_t n);
+void		*ft_memcpy(void *dest, const void *src, size_t n);
 //*ft_memmove
 void		*ft_memset(void *str, int c, size_t n);
-//ft_strcat
+char		*ft_strcat(char *dest, const char *src);
 //*ft_strchr
-//ft_strcmp
-//*ft_strcpy
-char		*ft_strdup(char *src)
-//ft_strlcat
+int			ft_strcmp(const char *str1, const char *str2);
+char		*ft_strcpy(char *dest, const char *src);
+char		*ft_strdup(char *src);
+size_t		ft_strlcat(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
-//*ft_strncat
+char		*ft_strncat(char *dest, char *src, size_t n);
 int			ft_strncmp(const char *str1, const char *str2, size_t n);
-//ft_strncpy
+char		*ft_strncpy(char *dest, const char *src, size_t n);
 //ft_strnstr
 //*ft_strrchr
-//ft_strstr
+char		*ft_strstr(const char *s1, const char *s2);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 /* ***** Part 2 - Libc functions ***** */
