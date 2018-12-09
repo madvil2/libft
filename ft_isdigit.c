@@ -6,13 +6,13 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 20:49:54 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/07 22:50:24 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/10 00:09:01 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

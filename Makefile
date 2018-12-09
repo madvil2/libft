@@ -6,7 +6,7 @@
 #    By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 21:35:29 by pcollio-          #+#    #+#              #
-#    Updated: 2018/12/07 19:36:06 by pcollio-         ###   ########.fr        #
+#    Updated: 2018/12/10 00:08:42 by pcollio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ $(NAME):
 	ar rc $(NAME) $(OUT)
 
 clean:
-		rm -f $(OBJ)
+		rm -f $(OUT)
 
 fclean:	clean
 		rm -f $(NAME)

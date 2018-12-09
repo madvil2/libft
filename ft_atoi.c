@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 21:12:47 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/08 17:05:52 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/10 00:09:01 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,14 @@ int		ft_atoi(const char *str)
 	if (str[i] == '\e')
 		return (0);
 	if (str[i] == '-')
-	{
 		minus = -1;
-		++i;
-	}
+	if (str[i] == '-' || str[i] == '+')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
+	{
+		if (ans != ans * 10 / 10)
+			return (minus < 0 ? 0 : -1);
 		ans = ans * 10 + (str[i++] - '0');
-	if (minus < 0 && ans < 0)
-		return (0);
-	else if (minus > 0 && ans < 0)
-		return (-1);
+	}
 	return ((int)ans * minus);
 }
