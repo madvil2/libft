@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 17:00:24 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 17:25:50 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/12 02:59:37 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/12 03:02:33 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	char	*str;
-
-	str = ft_memalloc(size + 1);
-	if (str)
-		return (str);
-	return (NULL);
+	new->next = *alst;
+	*alst = new;
 }

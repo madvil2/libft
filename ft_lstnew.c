@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 21:30:39 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 21:50:47 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/12 02:14:14 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/12 02:40:35 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	char	*str;
-	size_t	i;
+	t_list *list;
 
-	if (s)
+	list = (t_list*)malloc(sizeof(*list) * content_size);
+	if (list)
 	{
-		if ((str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)) == NULL)
-			return (NULL);
-		i = 0;
-		while (s[i])
+		if (content == NULL)
 		{
-			str[i] = f(s[i]);
-			i++;
+			list->content = NULL;
+			list->content_size = 0;
+			list->next = NULL;
 		}
-		str[i] = '\0';
-		return (str);
+		else
+		{
+			if (!(list->content = malloc(content_size)))
+				return (NULL);
+			ft_memcpy(list->content, content, content_size);
+			list->content_size = content_size;
+			list->next = NULL;
+		}
+		return (list);
 	}
 	return (NULL);
 }

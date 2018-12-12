@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 17:00:24 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 17:25:50 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/11 15:30:13 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/11 19:11:58 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnew(size_t size)
+int	ft_intlen(int n)
 {
-	char	*str;
+	int i;
 
-	str = ft_memalloc(size + 1);
-	if (str)
-		return (str);
-	return (NULL);
+	i = 0;
+	if (n >= 0)
+	{
+		while (n >= 10)
+		{
+			n /= 10;
+			i++;
+		}
+		return (i + 1);
+	}
+	else
+	{
+		while (n <= -10)
+		{
+			n /= 10;
+			i++;
+		}
+		return (i + 2);
+	}
 }
