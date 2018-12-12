@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 03:07:54 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/12 03:20:05 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/12 21:26:36 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *list;
+	t_list *nlist;
 
-	list = (t_list*)malloc(sizeof(*list));
-	while (lst)
+	list = f(lst);
+	nlist = list;
+	if (lst)
 	{
-		list = f(lst);
-		lst = lst->next;
+		while (lst->next)
+		{
+			lst = lst->next;
+			list->next = f(lst);
+			if (list->next == NULL)
+				return (NULL);
+			list = list->next;
+		}
+		return (nlist);
 	}
+	return (NULL);
 }
