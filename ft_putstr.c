@@ -6,13 +6,13 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 00:03:30 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 16:46:46 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/13 23:40:28 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *c)
+void	ft_putstr(char const *c)
 {
 	if (c)
 		while (*c)

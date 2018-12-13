@@ -6,13 +6,13 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:38:26 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/10 00:09:01 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/13 23:46:49 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, char *src, size_t n)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	size_t i;
 	size_t j;

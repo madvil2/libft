@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_word_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/07 22:56:54 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/13 23:45:28 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/13 23:54:33 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/14 00:05:31 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_word_len(char const *s, char c)
 {
-	char	*dup;
-	int		len;
-	int		i;
+	int len;
 
-	i = 0;
-	len = ft_strlen(src);
-	dup = malloc((len + 1) * sizeof(char));
-	if (dup)
-	{
-		while (src[i])
+	len = 0;
+	while (*s == c)
+		s++;
+	while (*s != c && *s != '\0')
+		while (*s != c && *s != '\0')
 		{
-			dup[i] = src[i];
-			i++;
+			len++;
+			s++;
 		}
-		dup[i] = '\0';
-		return (dup);
-	}
-	return (NULL);
+	return (len);
 }

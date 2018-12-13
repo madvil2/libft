@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/12 21:44:10 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/14 00:05:39 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ char				*ft_strcat(char *dest, const char *src);
 char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(const char *str1, const char *str2);
 char				*ft_strcpy(char *dest, const char *src);
-char				*ft_strdup(char *src);
+char				*ft_strdup(const char *src);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
-char				*ft_strncat(char *dest, char *src, size_t n);
+char				*ft_strncat(char *dest, const char *src, size_t n);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
@@ -72,7 +72,7 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
-void				ft_putstr(char *c);
+void				ft_putstr(char const *c);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
@@ -86,5 +86,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_intlen(int n);
+int					ft_count_words(char const *s, char c);
+int					ft_word_len(char const *s, char c);
 
 #endif
