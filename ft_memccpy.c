@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 22:39:20 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/10 00:09:01 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/19 20:04:50 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 
 	dup_src = (unsigned char *)src;
 	dup_dst = (unsigned char *)dst;
+	if ((dst == NULL && src == NULL) || dst == src)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{

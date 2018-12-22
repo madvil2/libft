@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_freearr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/08 17:55:30 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/19 20:04:55 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/19 21:09:13 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/21 23:38:16 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void		ft_freearr(char **words, int i)
 {
-	size_t			i;
-	unsigned char	*dup_src;
-	unsigned char	*dup_dst;
-
-	if ((dst == NULL && src == NULL) || dst == src)
-		return (NULL);
-	dup_src = (unsigned char *)src;
-	dup_dst = (unsigned char *)dst;
-	i = 0;
-	while (i < n)
-	{
-		dup_dst[i] = dup_src[i];
-		i++;
-	}
-	return (dup_dst);
+	while (i--)
+		ft_strdel(&words[i]);
+	free(words);
 }

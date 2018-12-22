@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 21:46:41 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/10 00:09:03 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/19 20:04:59 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	dup_src = (unsigned char *)src;
 	dup_dst = (unsigned char *)dst;
+	if ((dst == NULL && src == NULL) || dst == src)
+		return (NULL);
 	if (dst > src)
 		while (len--)
 			dup_dst[len] = dup_src[len];

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/08 17:55:30 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/19 20:04:55 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/19 22:07:23 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/19 22:07:26 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_foreach(int *tab, int length, void (*f) (int))
 {
-	size_t			i;
-	unsigned char	*dup_src;
-	unsigned char	*dup_dst;
+	int	i;
 
-	if ((dst == NULL && src == NULL) || dst == src)
-		return (NULL);
-	dup_src = (unsigned char *)src;
-	dup_dst = (unsigned char *)dst;
 	i = 0;
-	while (i < n)
-	{
-		dup_dst[i] = dup_src[i];
-		i++;
-	}
-	return (dup_dst);
+	while (i < length)
+		f(tab[i++]);
 }

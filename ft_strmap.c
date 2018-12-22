@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 21:30:39 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 21:50:47 by pcollio-         ###   ########.fr       */
+/*   Updated: 2018/12/19 21:36:56 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	char	*str;
 	size_t	i;
 
-	if (s)
+	if (s && f)
 	{
 		if ((str = (char *)malloc(sizeof(char) * ft_strlen(s) + 1)) == NULL)
 			return (NULL);

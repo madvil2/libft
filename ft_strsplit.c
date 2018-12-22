@@ -5,10 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 21:32:22 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/14 00:05:56 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/22 00:02:47 by pcollio-          #+#    #+#             */
+/*   Updated: 2018/12/22 00:02:51 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+
+
 
 #include "libft.h"
 
@@ -29,7 +32,7 @@ char		**ft_strsplit(char const *s, char c)
 	{
 		j = 0;
 		if (!(words[i] = ft_strnew(ft_word_len(&s[k], c))))
-			words[i] = NULL;
+			ft_freearr(words, i);
 		while (s[k] == c)
 			k++;
 		while (s[k] != c && s[k])
