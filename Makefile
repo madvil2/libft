@@ -6,7 +6,7 @@
 #    By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/04 21:35:29 by pcollio-          #+#    #+#              #
-#    Updated: 2019/02/22 16:51:15 by pcollio-         ###   ########.fr        #
+#    Updated: 2019/02/22 16:54:06 by pcollio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ SRCS =	ft_atoi.c\
 		ft_strtrim.c\
 		ft_tolower.c\
 		ft_toupper.c\
-		get_next_line.c\
+		get_next_line.c
 
 OUT = $(SRCS:.c=.o)
 

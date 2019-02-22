@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2019/02/22 16:50:52 by pcollio-         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:58:40 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,5 +92,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_freearr(char **words, int i);
 char				*ft_joinfree(char **s1, char **s2);
 int					get_next_line(const int fd, char **line);
+void				ft_foreach(int *tab, int length, void (*f)(int));
 
 #endif
