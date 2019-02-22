@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2019/02/22 16:26:02 by pcollio-         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:50:52 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 # include <string.h>
 # include <ctype.h>
 # include <stdio.h>
+# include <sys/types.h>
+# include <sys/uio.h>
+# define BUFF_SIZE 2056
 
 typedef struct		s_list
 {
@@ -88,5 +91,6 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_freearr(char **words, int i);
 char				*ft_joinfree(char **s1, char **s2);
+int					get_next_line(const int fd, char **line);
 
 #endif
