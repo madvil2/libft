@@ -1,38 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_intlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcspn.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 15:30:13 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 19:11:58 by pcollio-         ###   ########.fr       */
+/*   Created: 2019/01/31 17:16:49 by pcollio-          #+#    #+#             */
+/*   Updated: 2019/02/09 16:58:18 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_intlen(int n)
+size_t	ft_strcspn(const char *s1r, const char *s2r)
 {
-	int i;
+	const char *s1 = s1r;
+	const char *s2;
 
-	i = 0;
-	if (n >= 0)
+	while (*s1)
 	{
-		while (n >= 10)
+		s2 = s2r;
+		while (*s2)
 		{
-			n /= 10;
-			i++;
+			if (*s1 == *s2++)
+				return (s1 - s1r);
 		}
-		return (i + 1);
+		s1++;
 	}
-	else
-	{
-		while (n <= -10)
-		{
-			n /= 10;
-			i++;
-		}
-		return (i + 2);
-	}
+	return (s1 - s1r);
 }

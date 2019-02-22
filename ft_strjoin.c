@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 22:40:19 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 22:59:42 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/12 21:12:16 by fsmith            #+#    #+#             */
+/*   Updated: 2019/02/10 03:17:46 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 && s2)
 	{
 		if ((str = (char *)malloc(sizeof(char) * ft_strlen(s1)
-		+ ft_strlen(s2) + 1)) == NULL)
+				+ ft_strlen(s2) + 1)) == NULL)
 			return (NULL);
 		i = 0;
 		while (*s1)
-		{
-			str[i] = *s1++;
-			i++;
-		}
+			str[i++] = *s1++;
 		while (*s2)
-		{
-			str[i] = *s2++;
-			i++;
-		}
+			str[i++] = *s2++;
 		str[i] = '\0';
 		return (str);
 	}

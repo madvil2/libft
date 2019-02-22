@@ -6,7 +6,7 @@
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:31:11 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/19 22:09:03 by pcollio-         ###   ########.fr       */
+/*   Updated: 2019/02/22 16:26:02 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char				*ft_strcat(char *dest, const char *src);
 char				*ft_strchr(const char *s, int c);
 int					ft_strcmp(const char *str1, const char *str2);
 char				*ft_strcpy(char *dest, const char *src);
+size_t				ft_strcspn(const char *s1r, const char *s2r);
 char				*ft_strdup(const char *src);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
@@ -85,10 +86,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int					ft_intlen(int n);
-int					ft_count_words(char const *s, char c);
-int					ft_word_len(char const *s, char c);
 void				ft_freearr(char **words, int i);
-void				ft_foreach(int *tab, int length, void (*f) (int));
+char				*ft_joinfree(char **s1, char **s2);
 
 #endif

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pcollio- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 17:11:24 by pcollio-          #+#    #+#             */
-/*   Updated: 2018/12/11 17:19:28 by pcollio-         ###   ########.fr       */
+/*   Created: 2018/12/10 20:49:29 by fsmith            #+#    #+#             */
+/*   Updated: 2019/02/09 16:58:18 by pcollio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,11 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void	*str;
+	unsigned char	*s;
 
-	if (size == 0)
+	s = (unsigned char*)malloc(sizeof(unsigned char) * size);
+	if (!s)
 		return (NULL);
-	str = (void*)malloc(size);
-	if (str)
-	{
-		ft_bzero(str, size);
-		return (str);
-	}
-	return (NULL);
+	ft_bzero(s, size);
+	return (s);
 }
