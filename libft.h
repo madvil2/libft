@@ -12,6 +12,7 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
+#define BUFFER_SIZE 10
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -64,5 +65,14 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+// get_next_line
+char	*get_next_line(int fd);
+int		line_len(t_list *list);
+void	free_list(t_list **list, t_list *clear_node, char *buf);
+void	clear_list(t_list **list);
+void	str_copy(t_list *list, char *str);
+
+
 
 #endif

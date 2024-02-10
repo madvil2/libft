@@ -45,10 +45,8 @@ SRCS =	ft_isalpha.c\
 		ft_split.c\
 		ft_itoa.c\
 		ft_strmapi.c\
-		ft_striteri.c
-
-
-BSRCS =	ft_lstclear.c\
+		ft_striteri.c\
+		ft_lstclear.c\
 		ft_lstnew.c\
 		ft_lstadd_back.c\
 		ft_lstadd_front.c\
@@ -56,11 +54,11 @@ BSRCS =	ft_lstclear.c\
 		ft_lstlast.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
-		ft_lstmap.c
+		ft_lstmap.c\
+		get_next_line.c\
+		get_next_line_utils.c
 
 OBJ = $(SRCS:.c=.o)
-
-BOBJ = $(BSRCS:.c=.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -72,11 +70,8 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-bonus: $(OBJ) $(BOBJ)
-	ar rc $(NAME) $(OBJ) $(BOBJ)
-
 clean:
-	rm -f $(OBJ) $(BOBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
