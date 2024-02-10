@@ -58,11 +58,13 @@ SRCS =	ft_isalpha.c\
 		get_next_line.c\
 		get_next_line_utils.c
 
-OBJ = $(SRCS:.c=.o)
+OBJ_PATH := .obj/
+OBJ = $(SRCS:%.c=$(OBJ_PATH)%.o)
 
 CFLAGS = -Wall -Wextra -Werror
 
-%.o: %.c
+$(OBJ_PATH)%.o: %.c
+	@mkdir -p $(OBJ_PATH)
 	cc $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
@@ -71,7 +73,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ_PATH)*.o
 
 fclean: clean
 	rm -f $(NAME)
