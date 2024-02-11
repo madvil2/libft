@@ -15,6 +15,11 @@
 #define BUFFER_SIZE 10
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdint.h>
+# include <stdarg.h>
+# define HEX "0123456789abcdef"
+# define HEX_U "0123456789ABCDEF"
+# define DEC "0123456789"
 
 typedef struct s_list
 {
@@ -65,6 +70,7 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+int		ft_putnbr_base(long nbr, char *base);
 
 // get_next_line
 char	*get_next_line(int fd);
@@ -72,6 +78,13 @@ int		line_len(t_list *list);
 void	free_list(t_list **list, t_list *clear_node, char *buf);
 void	clear_list(t_list **list);
 void	str_copy(t_list *list, char *str);
+
+// ft_printf.c
+int		ft_printf(const char *format, ...);
+// ft_printf_utils.c
+int		print_char(char c);
+int		print_string(char *str);
+int		print_pointer(uintptr_t nbr, int flag);
 
 
 

@@ -55,8 +55,11 @@ SRCS =	ft_isalpha.c\
 		ft_lstdelone.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
+		ft_putnbr_base.c\
 		get_next_line.c\
-		get_next_line_utils.c
+		get_next_line_utils.c\
+		ft_printf.c\
+		ft_printf_utils.c
 
 OBJ_PATH := .obj/
 OBJ = $(SRCS:%.c=$(OBJ_PATH)%.o)
