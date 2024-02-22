@@ -12,7 +12,6 @@
 
 #ifndef LIBFT_H
 # define LIBFT_H
-#define BUFFER_SIZE 10
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>
@@ -20,6 +19,7 @@
 # define HEX "0123456789abcdef"
 # define HEX_U "0123456789ABCDEF"
 # define DEC "0123456789"
+# define BUFFER_SIZE 10
 
 typedef struct s_list
 {
@@ -81,11 +81,10 @@ void	str_copy(t_list *list, char *str);
 
 // ft_printf.c
 int		ft_printf(const char *format, ...);
+
 // ft_printf_utils.c
 int		print_char(char c);
 int		print_string(char *str);
 int		print_pointer(uintptr_t nbr, int flag);
-
-
 
 #endif

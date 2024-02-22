@@ -76,7 +76,8 @@ void	clear_list(t_list **list)
 	last_node = ft_lstlast(*list);
 	i = 0;
 	j = 0;
-	while (((char *)last_node->content)[i] && ((char *)last_node->content)[i] != '\n')
+	while (((char *)last_node->content)[i]
+	&& ((char *)last_node->content)[i] != '\n')
 		i++;
 	while (((char *)last_node->content)[i] && ((char *)last_node->content)[++i])
 		buf[j++] = ((char *)last_node->content)[i];

@@ -33,7 +33,6 @@ static int	is_newline(t_list *list)
 {
 	int	i;
 
-
 	if (!list)
 		return (0);
 	while (list)
