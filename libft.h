@@ -48,7 +48,6 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 int				ft_atoi(const char *nptr);
-long long int	ft_atoll(const char *nptr);
 void			*ft_calloc(size_t nmemb, size_t size);
 char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
@@ -71,21 +70,26 @@ t_list			*ft_lstlast(t_list *lst);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
 t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int				ft_putnbr_base(long nbr, char *base);
 
+// additional
+int				ft_putnbr_base(long nbr, char *base);
+long long int	ft_atoll(const char *nptr);
+void			free_matrix(char **arr);
+
+// todo: separate everything related to gnl to different .h
 // get_next_line
-char	*get_next_line(int fd);
-int		line_len(t_list *list);
-void	free_list(t_list **list, t_list *clear_node, char *buf);
-void	clear_list(t_list **list);
-void	str_copy(t_list *list, char *str);
+char			*get_next_line(int fd);
+int				line_len(t_list *list);
+void			free_list(t_list **list, t_list *clear_node, char *buf);
+void			clear_list(t_list **list);
+void			str_copy(t_list *list, char *str);
 
 // ft_printf.c
-int		ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 
 // ft_printf_utils.c
-int		print_char(char c);
-int		print_string(char *str);
-int		print_pointer(uintptr_t nbr, int flag);
+int				print_char(char c);
+int				print_string(char *str);
+int				print_pointer(uintptr_t nbr, int flag);
 
 #endif

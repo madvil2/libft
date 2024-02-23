@@ -59,7 +59,9 @@ SRCS =	ft_isalpha.c\
 		get_next_line.c\
 		get_next_line_utils.c\
 		ft_printf.c\
-		ft_printf_utils.c
+		ft_printf_utils.c\
+		ft_atoll.c\
+		free_matrix.c
 
 OBJ_PATH := .obj/
 OBJ = $(SRCS:%.c=$(OBJ_PATH)%.o)
@@ -76,7 +78,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ_PATH)*.o
+	rm -rf $(OBJ_PATH)
 
 fclean: clean
 	rm -f $(NAME)
