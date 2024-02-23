@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kokaimov <kokaimov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 15:47:13 by kokaimov          #+#    #+#             */
-/*   Updated: 2023/11/15 15:47:13 by kokaimov         ###   ########.fr       */
+/*   Created: 2024/02/23 18:45:14 by kokaimov          #+#    #+#             */
+/*   Updated: 2024/02/23 18:45:14 by kokaimov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+long long int	ft_atoll(const char *nptr)
 {
 	short			i;
 	short			minus;
@@ -22,7 +22,7 @@ int	ft_atoi(const char *nptr)
 	minus = 1;
 	ans = 0;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
+		   || nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 		i++;
 	if (nptr[i] == '-')
 		minus = -1;
@@ -30,5 +30,5 @@ int	ft_atoi(const char *nptr)
 		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 		ans = ans * 10 + (nptr[i++] - '0');
-	return ((int)ans * minus);
+	return (ans * minus);
 }
