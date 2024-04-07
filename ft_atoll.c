@@ -22,7 +22,7 @@ long long int	ft_atoll(const char *nptr)
 	minus = 1;
 	ans = 0;
 	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n'
-		   || nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
+		|| nptr[i] == '\v' || nptr[i] == '\f' || nptr[i] == '\r')
 		i++;
 	if (nptr[i] == '-')
 		minus = -1;
