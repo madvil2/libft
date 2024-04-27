@@ -10,72 +10,101 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME :=				libft.a
 
-SRCS =	ft_isalpha.c\
-		ft_isascii.c\
-		ft_isalnum.c\
-		ft_isdigit.c\
-		ft_isprint.c\
-		ft_strlen.c\
-		ft_memset.c\
-		ft_bzero.c\
-		ft_memcpy.c\
-		ft_memmove.c\
-		ft_strlcpy.c\
-		ft_strlcat.c\
-		ft_toupper.c\
-		ft_tolower.c\
-		ft_strchr.c\
-		ft_memchr.c\
-		ft_strrchr.c\
-		ft_strncmp.c\
-		ft_memcmp.c\
-		ft_strnstr.c\
-		ft_atoi.c\
-		ft_calloc.c\
-		ft_strdup.c\
-		ft_substr.c\
-		ft_strjoin.c\
-		ft_strtrim.c\
-		ft_putchar_fd.c\
-		ft_putstr_fd.c\
-		ft_putendl_fd.c\
-		ft_putnbr_fd.c\
-		ft_split.c\
-		ft_itoa.c\
-		ft_strmapi.c\
-		ft_striteri.c\
-		ft_lstclear.c\
-		ft_lstnew.c\
-		ft_lstadd_back.c\
-		ft_lstadd_front.c\
-		ft_lstsize.c\
-		ft_lstlast.c\
-		ft_lstdelone.c\
-		ft_lstiter.c\
-		ft_lstmap.c\
-		ft_putnbr_base.c\
-		get_next_line.c\
-		get_next_line_utils.c\
-		ft_printf.c\
-		ft_printf_utils.c\
-		ft_atoll.c\
-		free_matrix.c
+SRC_PATH :=			srcs/
+INC_PATH :=			includes/
+OBJ_PATH :=			.obj/
 
-OBJ_PATH := .obj/
-OBJ = $(SRCS:%.c=$(OBJ_PATH)%.o)
+CFLAGS :=			-Wall -Wextra -Werror
+IFLAGS :=			-I $(INC_PATH)
 
-CFLAGS = -Wall -Wextra -Werror
+HFILES :=			libft\
+					ft_printf
 
-$(OBJ_PATH)%.o: %.c
-	@mkdir -p $(OBJ_PATH)
-	cc $(CFLAGS) -c $< -o $@
+SUB_PATH :=			btree\
+					ctype\
+					deque\
+					garbage_collector\
+					list\
+					math\
+					stdio\
+					stdio/ft_printf\
+					stdlib\
+					string
+
+FILES :=			ft_isalpha\
+					ft_isascii\
+					ft_isalnum\
+					ft_isdigit\
+					ft_isprint\
+					ft_strlen\
+					ft_memset\
+					ft_bzero\
+					ft_memcpy\
+					ft_memmove\
+					ft_strlcpy\
+					ft_strlcat\
+					ft_toupper\
+					ft_tolower\
+					ft_strchr\
+					ft_memchr\
+					ft_strrchr\
+					ft_strncmp\
+					ft_memcmp\
+					ft_strnstr\
+					ft_atoi\
+					ft_calloc\
+					ft_strdup\
+					ft_substr\
+					ft_strjoin\
+					ft_strtrim\
+					ft_putchar_fd\
+					ft_putstr_fd\
+					ft_putendl_fd\
+					ft_putnbr_fd\
+					ft_split\
+					ft_itoa\
+					ft_strmapi\
+					ft_striteri\
+					ft_lstclear\
+					ft_lstnew\
+					ft_lstadd_back\
+					ft_lstadd_front\
+					ft_lstsize\
+					ft_lstlast\
+					ft_lstdelone\
+					ft_lstiter\
+					ft_lstmap\
+					ft_putnbr_base\
+					get_next_line\
+					get_next_line_utils\
+					ft_atoll\
+					free_matrix\
+					ft_printf\
+					print_c\
+					print_i_d\
+					print_number\
+					print_p\
+					print_s\
+					print_u\
+					print_x\
+					print_utils
+
+HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
+SRCS :=				$(addsuffix .c, $(FILES))
+OBJS :=				$(addprefix $(OBJ_PATH), $(addsuffix .o, $(FILES)))
+
+vpath %.c $(addprefix $(SRC_PATH),  $(SUB_PATH))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+$(NAME): $(OBJS)
+	ar rc $(NAME) $(OBJS)
+
+$(OBJS): $(OBJ_PATH)%.o: %.c $(HDRS)
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_PATH)
