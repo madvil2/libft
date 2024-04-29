@@ -40,7 +40,7 @@ typedef struct s_printf
 void	init_flags(t_printf *args, const char *format, int *offset);
 void	init_args(t_printf *args, const char *format, int *offset, va_list ap);
 int		print_conversion(const char *s, va_list ap,
-							t_printf *args, int *offset);
+			t_printf *args, int *offset);
 int		ft_printf(const char *format, ...);
 
 int		ft_putnchar(char c, int n);
