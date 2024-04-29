@@ -38,7 +38,7 @@ static void	dumpster_push(t_deque *deque, void *ptr)
 	deque->size++;
 }
 
-static t_deque	*get_dumpster(int flag)
+static t_deque	**get_dumpster(int flag)
 {
 	static t_deque	*perm;
 	static t_deque	*temp;
@@ -56,8 +56,8 @@ static t_deque	*get_dumpster(int flag)
 		temp->size = 0;
 	}
 	if (flag == PERM)
-		return (perm);
-	return (temp);
+		return (&perm);
+	return (&temp);
 }
 
 void	gc_free(int flag)
@@ -65,20 +65,21 @@ void	gc_free(int flag)
 	int				i;
 	t_deque_node	*travel;
 	t_deque_node	*next;
-	t_deque			*deque;
+	t_deque			**deque;
 
 	deque = get_dumpster(flag);
-	travel = deque->head;
+	travel = (*deque)->head;
 	i = -1;
-	while (++i < deque->size)
+	while (++i < (*deque)->size)
 	{
-		if (i != deque->size - 1)
+		if (i != (*deque)->size - 1)
 			next = travel->next;
 		free(travel->as_ptr);
 		free(travel);
 		travel = next;
 	}
-	free(deque);
+	free(*deque);
+	*deque = NULL;
 }
 
 void	ft_malloc(size_t size, int flag)
@@ -91,5 +92,5 @@ void	ft_malloc(size_t size, int flag)
 		ft_printf("malloc error");
 		exit(0);
 	}
-	dumpster_push(get_dumpster(flag), ptr);
+	dumpster_push(*get_dumpster(flag), ptr);
 }

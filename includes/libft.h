@@ -6,7 +6,7 @@
 /*   By: kokaimov <kokaimov@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 13:26:59 by kokaimov          #+#    #+#             */
-/*   Updated: 2023/11/14 18:30:25 by kokaimov         ###   ########.fr       */
+/*   Updated: 2024/04/29 07:08:18 by nam-vu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,6 @@ int				line_len(t_list *list);
 void			free_list(t_list **list, t_list *clear_node, char *buf);
 void			clear_list(t_list **list);
 void			str_copy(t_list *list, char *str);
-
-// ft_printf.c
-int				ft_printf(const char *format, ...);
-
-// ft_printf_utils.c
-int				print_char(char c);
-int				print_string(char *str);
-int				print_pointer(uintptr_t nbr, int flag);
 
 //garbage_collector.c
 void			gc_free(int flag);
