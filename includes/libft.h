@@ -19,7 +19,12 @@
 # include <stdarg.h>
 # include <limits.h>
 
+# include "deque.h"
+# include "ft_printf.h"
+
 # define BUFFER_SIZE 10
+# define PERM 1
+# define TEMP 0
 
 typedef struct s_list
 {
@@ -91,5 +96,9 @@ int				ft_printf(const char *format, ...);
 int				print_char(char c);
 int				print_string(char *str);
 int				print_pointer(uintptr_t nbr, int flag);
+
+//garbage_collector.c
+void			gc_free(int flag);
+void			ft_malloc(size_t size, int flag);
 
 #endif
