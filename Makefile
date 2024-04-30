@@ -22,16 +22,15 @@ IFLAGS :=			-I $(INC_PATH)
 HFILES :=			libft\
 					ft_printf
 
-SUB_PATH :=			btree\
-					ctype\
+SUB_PATH :=			ctype\
 					deque\
 					garbage_collector\
 					list\
-					math\
 					stdio\
 					stdio/ft_printf\
 					stdlib\
-					string
+					string\
+					hashtable
 
 FILES :=			ft_isalpha\
 					ft_isascii\
@@ -89,7 +88,19 @@ FILES :=			ft_isalpha\
 					print_s\
 					print_u\
 					print_x\
-					print_utils
+					print_utils\
+					deque_init\
+					deque_node_init\
+					deque_pop_right\
+					deque_push_node_right\
+					deque_sort\
+					deque_iter\
+					deque_pop_left\
+					deque_push_node_left\
+					deque_rotate\
+					deque_swap\
+					ft_malloc\
+					hashtable
 
 HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=				$(addsuffix .c, $(FILES))
