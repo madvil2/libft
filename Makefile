@@ -20,7 +20,9 @@ CFLAGS :=			-Wall -Wextra -Werror
 IFLAGS :=			-I $(INC_PATH)
 
 HFILES :=			libft\
-					ft_printf
+					ft_printf\
+					deque\
+					hashtable
 
 SUB_PATH :=			ctype\
 					deque\
@@ -99,6 +101,7 @@ FILES :=			ft_isalpha\
 					deque_push_node_left\
 					deque_rotate\
 					deque_swap\
+					deque_print\
 					ft_malloc\
 					hashtable
 

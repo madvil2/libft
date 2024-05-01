@@ -28,6 +28,7 @@ void	deque_push_node_right(t_deque *deque, t_deque_node *node)
 		node->prev = deque->head->prev;
 		node->next = deque->head;
 		deque->head->prev = node;
+		deque->head = node;
 	}
 	deque->size++;
 }

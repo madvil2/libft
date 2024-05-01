@@ -14,25 +14,24 @@
 
 t_deque_node	*deque_pop_left(t_deque *deque)
 {
-	t_deque_node	*prev;
 	t_deque_node	*head;
-	t_deque_node	*next;
+	t_deque_node	*prev;
+	t_deque_node	*prev_prev;
 
 	head = deque->head;
 	if (!head)
 		return (NULL);
-	prev = head->prev;
-	next = head->next;
+	prev = deque->head->prev;
+	prev_prev = prev->prev;
 	if (head == head->next)
 		deque->head = NULL;
 	else
 	{
-		deque->head = next;
-		next->prev = prev;
-		prev->next = next;
+		deque->head->prev = prev_prev;
+		prev_prev->next = deque->head;
 	}
-	head->next = NULL;
-	head->prev = NULL;
+	prev->next = NULL;
+	prev->prev = NULL;
 	deque->size -= 1;
-	return (head);
+	return (prev);
 }

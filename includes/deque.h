@@ -54,5 +54,6 @@ void			deque_push_node_right(t_deque *deque, t_deque_node *node);
 void			deque_rotate(t_deque *deque, int n);
 void			deque_swap(t_deque *deque);
 void			deque_sort(t_deque *deque, int (cmp)(void *ptr1, void *ptr2));
+void			deque_print(t_deque *deque);
 
 #endif
