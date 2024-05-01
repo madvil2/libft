@@ -31,5 +31,6 @@ void	ht_print(t_ht *ht)
 	i = -1;
 	while (++i < ht->size)
 		if (ht->key[i])
-			ft_printf("hash: %i key: %s value: %s\n", i, ht->key[i], ht->value[i]);
+			ft_printf("hash: %i key: %s value: %s\n", i,
+				ht->key[i], ht->value[i]);
 }

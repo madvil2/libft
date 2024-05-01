@@ -16,7 +16,7 @@ t_ht	*ht_init(int size)
 {
 	t_ht	*ht;
 
-	ht = malloc(sizeof(ht));
+	ht = ft_malloc(sizeof(ht));
 	ht->size = size;
 	ht->nb_entry = 0;
 	ht->key = ft_calloc(ht->size, sizeof(char **));

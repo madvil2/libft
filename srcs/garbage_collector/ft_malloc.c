@@ -102,6 +102,8 @@ void	*ft_malloc(size_t size)
 	if (!ptr)
 	{
 		ft_printf("malloc error");
+		gc_free(TEMP);
+		gc_free(PERM);
 		exit(0);
 	}
 	dumpster_push(*get_dumpster(flag), ptr);

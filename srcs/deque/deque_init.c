@@ -16,7 +16,7 @@ t_deque	*deque_init(void)
 {
 	t_deque	*res;
 
-	res = malloc(sizeof(t_deque));
+	res = ft_malloc(sizeof(t_deque));
 	res->head = NULL;
 	res->size = 0;
 	return (res);

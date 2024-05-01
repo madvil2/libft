@@ -16,7 +16,7 @@ t_deque_node	*deque_node_init(void *content)
 {
 	t_deque_node	*res;
 
-	res = malloc(sizeof(t_deque_node));
+	res = ft_malloc(sizeof(t_deque_node));
 	res->next = res;
 	res->prev = res;
 	res->as_ptr = content;
