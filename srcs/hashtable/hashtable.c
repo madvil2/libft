@@ -12,27 +12,34 @@
 
 #include "../../includes/hashtable.h"
 
-static unsigned int	wlfsbrg12(const char *str)
+t_ht	*ht_init(int size)
 {
-	unsigned int	hash;
-	int				i;
+	t_ht	*ht;
 
-	i = -1;
-	while (str[++i])
-		hash = hash * 47 + str[i];
-	return (hash);
+	ht = malloc(sizeof(ht));
+	ht->size = size;
+	ht->nb_entry = 0;
+	ht->key = ft_calloc(ht->size, sizeof(char **));
+	ht->value = ft_calloc(ht->size, sizeof(char **));
+	return (ht);
 }
 
-t_ht	*ht_resize(t_ht *ht)
+void	ht_resize(t_ht *ht)
 {
 	int		new_size;
-	t_ht	*new_ht;
+	char	**new_key;
+	char	**new_value;
 
 	new_size = ht->size * 2;
-	new_ht = ft_calloc(new_size, sizeof(t_ht));
-	ft_memcpy(new_ht, ht, ht->size * sizeof(t_ht));
-	free(ht);
-	return (new_ht);
+	new_key = ft_calloc(new_size, sizeof(char *));
+	new_value = ft_calloc(new_size, sizeof(char *));
+	ft_memcpy(new_key, ht->key, ht->size * sizeof(char *));
+	ft_memcpy(new_value, ht->value, ht->size * sizeof(char *));
+	free(ht->key);
+	free(ht->value);
+	ht->key = new_key;
+	ht->value = new_value;
+	ht->size = new_size;
 }
 
 void	ht_delete(t_ht *ht, char *key)
@@ -58,6 +65,7 @@ void	ht_delete(t_ht *ht, char *key)
 	free(ht->value[hash % ht_size]);
 	ht->key[hash % ht_size] = NULL;
 	ht->value[hash % ht_size] = NULL;
+	ht->nb_entry--;
 }
 
 char	*ht_get(t_ht *ht, char *key)
@@ -87,10 +95,13 @@ void	ht_add(t_ht *ht, char *key, char *value)
 	unsigned int	hash;
 	int				ht_size;
 
+	if (ht->nb_entry == ht->size)
+		ht_resize(ht);
 	ht_size = ht->size;
 	hash = wlfsbrg12(key);
 	while (ht->key[hash % ht_size])
 		hash++;
-	ht->key[hash] = key;
-	ht->value[hash] = value;
+	ht->key[hash % ht_size] = key;
+	ht->value[hash % ht_size] = value;
+	ht->nb_entry++;
 }

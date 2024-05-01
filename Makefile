@@ -103,7 +103,8 @@ FILES :=			ft_isalpha\
 					deque_swap\
 					deque_print\
 					ft_malloc\
-					hashtable
+					hashtable\
+					hash
 
 HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=				$(addsuffix .c, $(FILES))

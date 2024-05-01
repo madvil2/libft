@@ -25,6 +25,7 @@
 # define BUFFER_SIZE 10
 # define PERM 1
 # define TEMP 0
+# define GET 2
 
 typedef struct s_list
 {
@@ -91,6 +92,7 @@ void			str_copy(t_list *list, char *str);
 
 //garbage_collector.c
 void			gc_free(int flag);
-void			ft_malloc(size_t size, int flag);
+int				set_allocator(int flag);
+void			*ft_malloc(size_t size);
 
 #endif

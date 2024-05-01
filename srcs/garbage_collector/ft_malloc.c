@@ -82,10 +82,22 @@ void	gc_free(int flag)
 	*deque = NULL;
 }
 
-void	ft_malloc(size_t size, int flag)
+int	set_allocator(int flag)
 {
-	void			*ptr;
+	static int	allocator;
 
+	if (flag == GET)
+		return (allocator);
+	allocator = flag;
+	return (allocator);
+}
+
+void	*ft_malloc(size_t size)
+{
+	void	*ptr;
+	int		flag;
+
+	flag = set_allocator(GET);
 	ptr = malloc(size);
 	if (!ptr)
 	{
@@ -93,4 +105,6 @@ void	ft_malloc(size_t size, int flag)
 		exit(0);
 	}
 	dumpster_push(*get_dumpster(flag), ptr);
+	ft_bzero(ptr, size);
+	return (ptr);
 }
