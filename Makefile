@@ -39,6 +39,7 @@ FILES :=			ft_isalpha\
 					ft_isalnum\
 					ft_isdigit\
 					ft_isprint\
+					ft_isspace\
 					ft_strlen\
 					ft_memset\
 					ft_bzero\
