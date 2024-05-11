@@ -54,7 +54,7 @@ void	ht_delete(t_ht *ht, char *key)
 	ht_size = ht->size;
 	hash = wlfsbrg12(key);
 	while (!ht->key[hash % ht_size]
-		|| ft_strncmp(ht->key[hash % ht_size], key, key_len))
+		|| ft_strncmp(ht->key[hash % ht_size], key, key_len + 1))
 	{
 		hash++;
 		counter++;
@@ -80,7 +80,7 @@ char	*ht_get(t_ht *ht, char *key)
 	ht_size = ht->size;
 	hash = wlfsbrg12(key);
 	while (!ht->key[hash % ht_size]
-		|| ft_strncmp(ht->key[hash % ht_size], key, key_len))
+		|| ft_strncmp(ht->key[hash % ht_size], key, key_len + 1))
 	{
 		hash++;
 		counter++;
@@ -101,7 +101,7 @@ void	ht_add(t_ht *ht, char *key, char *value)
 	hash = wlfsbrg12(key);
 	while (ht->key[hash % ht_size])
 	{
-		if (!ft_strncmp(ht->key[hash % ht_size], key, ft_strlen(key + 1)))
+		if (!ft_strncmp(ht->key[hash % ht_size], key, ft_strlen(key) + 1))
 		{
 			ht->value[hash % ht_size] = value;
 			return ;
