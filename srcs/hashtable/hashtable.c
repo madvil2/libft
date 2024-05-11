@@ -100,7 +100,14 @@ void	ht_add(t_ht *ht, char *key, char *value)
 	ht_size = ht->size;
 	hash = wlfsbrg12(key);
 	while (ht->key[hash % ht_size])
-		hash++;
+	{
+		if (!ft_strncmp(ht->key[hash % ht_size], key, ft_strlen(key + 1)))
+		{
+			ht->value[hash % ht_size] = value;
+			return ;
+		}
+			hash++;
+	}
 	ht->key[hash % ht_size] = key;
 	ht->value[hash % ht_size] = value;
 	ht->nb_entry++;
