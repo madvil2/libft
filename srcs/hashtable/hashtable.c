@@ -87,7 +87,7 @@ char	*ht_get(t_ht *ht, char *key)
 		if (counter == ht_size)
 			return (NULL);
 	}
-	return (ht->value[hash % ht_size]);
+	return (ft_strdup(ht->value[hash % ht_size]));
 }
 
 void	ht_add(t_ht *ht, char *key, char *value)
