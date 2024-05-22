@@ -1,8 +1,4 @@
-Here's a README.md file for your `libft` project on GitHub. This template includes sections that summarize the project, describe its contents, explain how to compile and use the library, and detail how to test it. The format should help users and collaborators understand and use your project effectively.
-
----
-
-# Libft @ 42Born2Code
+# Libft
 
 ## Table of Contents
 - [Introduction](#introduction)
