@@ -22,7 +22,8 @@ IFLAGS :=			-I $(INC_PATH)
 HFILES :=			libft\
 					ft_printf\
 					deque\
-					hashtable
+					hashtable\
+					tree
 
 SUB_PATH :=			ctype\
 					deque\
@@ -32,7 +33,8 @@ SUB_PATH :=			ctype\
 					stdio/ft_printf\
 					stdlib\
 					string\
-					hashtable
+					hashtable\
+					tree
 
 FILES :=			ft_isalpha\
 					ft_isascii\
@@ -107,7 +109,9 @@ FILES :=			ft_isalpha\
 					deque_to_arr\
 					ft_malloc\
 					hashtable\
-					hash
+					hash\
+					tree_add_child\
+					tree_node_init
 
 HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=				$(addsuffix .c, $(FILES))

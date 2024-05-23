@@ -18,7 +18,6 @@
 
 typedef struct s_deque		t_deque;
 typedef struct s_deque_node	t_deque_node;
-typedef struct s_deque_iter	t_di;
 typedef struct s_ast_node	t_ast_node;
 typedef struct s_token		t_token;
 
