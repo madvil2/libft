@@ -18,8 +18,9 @@
 
 typedef struct s_deque		t_deque;
 typedef struct s_deque_node	t_deque_node;
-typedef struct s_ast_node	t_ast_node;
 typedef struct s_token		t_token;
+typedef struct s_nonterm	t_nonterm;
+typedef struct s_tree		t_tree;
 
 struct	s_deque_node
 {
@@ -30,7 +31,8 @@ struct	s_deque_node
 		void		*as_ptr;
 		char		*as_str;
 		t_token		*as_token;
-		t_ast_node	*as_ast_node;
+		t_nonterm	*as_nt;
+		t_tree		*as_tree;
 		long		as_long;
 		int			as_int;
 		char		as_char;

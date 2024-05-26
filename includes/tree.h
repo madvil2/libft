@@ -17,6 +17,7 @@
 typedef struct s_tree	t_tree;
 typedef struct s_ast_node	t_ast_node;
 typedef struct s_token		t_token;
+typedef struct s_nonterm	t_nonterm;
 
 struct	s_tree
 {
@@ -29,6 +30,7 @@ struct	s_tree
 		char		*as_str;
 		t_token		*as_token;
 		t_ast_node	*as_ast_node;
+		t_nonterm	*as_nt;
 		long		as_long;
 		int			as_int;
 		char		as_char;
