@@ -39,5 +39,7 @@ struct	s_tree
 
 t_tree	*tree_node_init(void *content);
 void	tree_add_child(t_tree **parent, void *content);
+void	tree_pop_child(t_tree **parent);
+void	tree_add_node(t_tree **parent, t_tree *new_node);
 
 #endif

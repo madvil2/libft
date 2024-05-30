@@ -111,7 +111,9 @@ FILES :=			ft_isalpha\
 					hashtable\
 					hash\
 					tree_add_child\
-					tree_node_init
+					tree_node_init\
+					tree_pop_child\
+					tree_add_node
 
 HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=				$(addsuffix .c, $(FILES))
