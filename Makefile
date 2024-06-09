@@ -87,6 +87,7 @@ FILES :=			ft_isalpha\
 					ft_atoll\
 					free_matrix\
 					ft_printf\
+					ft_dprintf\
 					print_c\
 					print_i_d\
 					print_number\

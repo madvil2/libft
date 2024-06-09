@@ -37,6 +37,8 @@ typedef struct s_printf
 	char	sign;
 }	t_printf;
 
+int	ft_dprintf(int fd, const char *format, ...);
+
 void	init_flags(t_printf *args, const char *format, int *offset);
 void	init_args(t_printf *args, const char *format, int *offset, va_list ap);
 int		print_conversion(const char *s, va_list ap,
