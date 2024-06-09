@@ -43,5 +43,6 @@ int	ft_dprintf(int fd, const char *format, ...)
 	}
 	va_end(ap);
 	dup2(stdout, STDOUT_FILENO);
+	close(stdout);
 	return (args.res);
 }
