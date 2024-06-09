@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
+
+pthread_mutex_t print_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 int	ft_dprintf(int fd, const char *format, ...)
 {
@@ -19,6 +22,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 	t_printf	args;
 	int			stdout;
 
+	pthread_mutex_lock(&print_mutex);
 	if (!format)
 		return (-1);
 	va_start(ap, format);
@@ -44,5 +48,6 @@ int	ft_dprintf(int fd, const char *format, ...)
 	va_end(ap);
 	dup2(stdout, STDOUT_FILENO);
 	close(stdout);
+	pthread_mutex_unlock(&print_mutex);
 	return (args.res);
 }

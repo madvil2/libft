@@ -18,7 +18,7 @@
 # include <stdint.h>
 # include <stdarg.h>
 # include <limits.h>
-
+# include <pthread.h>
 # include "deque.h"
 # include "ft_printf.h"
 
