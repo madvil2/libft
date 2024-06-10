@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int	ft_putnchar(char c, int n)
+int	ft_putnchar_fd(char c, int n, int fd)
 {
 	int	i;
 
@@ -20,11 +20,11 @@ int	ft_putnchar(char c, int n)
 	if (n <= 0)
 		return (0);
 	while (i++ < n)
-		ft_putchar_fd(c, 1);
+		ft_putchar_fd(c, fd);
 	return (n);
 }
 
-int	ft_putnstr(char *str, int n)
+int	ft_putnstr_fd(char *str, int n, int fd)
 {
 	int	i;
 
@@ -32,10 +32,10 @@ int	ft_putnstr(char *str, int n)
 	if (n < 0)
 	{
 		while (str[i])
-			ft_putchar_fd(str[i++], 1);
+			ft_putchar_fd(str[i++], fd);
 		return (i);
 	}
 	while (str[i] && i < n)
-		ft_putchar_fd(str[i++], 1);
+		ft_putchar_fd(str[i++], fd);
 	return (i);
 }

@@ -35,9 +35,10 @@ typedef struct s_printf
 	int		plus;
 	int		res;
 	char	sign;
+	int		fd;
 }	t_printf;
 
-int	ft_dprintf(int fd, const char *format, ...);
+int		ft_dprintf(int fd, const char *format, ...);
 
 void	init_flags(t_printf *args, const char *format, int *offset);
 void	init_args(t_printf *args, const char *format, int *offset, va_list ap);
@@ -45,8 +46,8 @@ int		print_conversion(const char *s, va_list ap,
 			t_printf *args, int *offset);
 int		ft_printf(const char *format, ...);
 
-int		ft_putnchar(char c, int n);
-int		ft_putnstr(char *str, int n);
+int		ft_putnchar_fd(char c, int n, int fd);
+int		ft_putnstr_fd(char *str, int n, int fd);
 
 int		pf_get_nb_len(long nbr, char *base);
 int		pf_putnbr_base(long nbr, char *base, t_printf *args);

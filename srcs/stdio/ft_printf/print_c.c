@@ -21,16 +21,16 @@ int	print_c(char c, t_printf *args)
 	{
 		if (args->minus == 1)
 		{
-			res += ft_putnchar(c, 1);
-			res += ft_putnchar(' ', args->width - 1);
+			res += ft_putnchar_fd(c, 1, args->fd);
+			res += ft_putnchar_fd(' ', args->width - 1, args->fd);
 		}
 		else
 		{
-			res += ft_putnchar(' ', args->width - 1);
-			res += ft_putnchar(c, 1);
+			res += ft_putnchar_fd(' ', args->width - 1, args->fd);
+			res += ft_putnchar_fd(c, 1, args->fd);
 		}
 	}
 	else
-		res += ft_putnchar(c, 1);
+		res += ft_putnchar_fd(c, 1, args->fd);
 	return (res);
 }

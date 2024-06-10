@@ -25,15 +25,15 @@ int	print_s(char *str, t_printf *args)
 	res = 0;
 	if (args->minus)
 	{
-		res += ft_putnstr(str, args->precision);
-		res += ft_putnchar(' ', args->width - res);
+		res += ft_putnstr_fd(str, args->precision, args->fd);
+		res += ft_putnchar_fd(' ', args->width - res, args->fd);
 	}
 	else
 	{
-		res += ft_putnchar(' ', args->width - ft_strlen(str) * (ft_strlen(str)
+		res += ft_putnchar_fd(' ', args->width - ft_strlen(str) * (ft_strlen(str)
 					<= (size_t)args->precision) - args->precision
-				* (ft_strlen(str) > (size_t)args->precision));
-		res += ft_putnstr(str, args->precision);
+				* (ft_strlen(str) > (size_t)args->precision), args->fd);
+		res += ft_putnstr_fd(str, args->precision, args->fd);
 	}
 	return (res);
 }

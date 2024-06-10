@@ -90,7 +90,7 @@ int	print_conversion(const char *s, va_list ap, t_printf *args, int *offset)
 	if (s[*offset - 1] == 'x' || s[*offset - 1] == 'X')
 		return (print_x(va_arg(ap, unsigned int), args));
 	if (s[*offset - 1] == '%')
-		return (ft_putnchar('%', 1));
+		return (ft_putnchar_fd('%', 1, args->fd));
 	ft_putchar_fd(s[*offset - 1], 1);
 	return (1);
 }
@@ -108,17 +108,12 @@ int	ft_printf(const char *format, ...)
 	args.res = 0;
 	while (format[offset])
 	{
-		args.hash = 0;
-		args.minus = 0;
-		args.plus = 0;
-		args.space = 0;
-		args.filler = ' ';
-		args.precision = -1;
-		args.width = -1;
+		(args.fd = 1, args.hash = 0, args.minus = 0, args.plus = 0,
+		 args.space = 0, args.filler = ' ', args.precision = -1, args.width = -1, free(NULL));
 		if (format[offset] == '%')
 			args.res += print_conversion(format, ap, &args, &offset);
 		else
-			args.res += ft_putnchar(format[offset++], 1);
+			args.res += ft_putnchar_fd(format[offset++], 1, args.fd);
 	}
 	va_end(ap);
 	return (args.res);

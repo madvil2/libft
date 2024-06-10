@@ -17,7 +17,7 @@ int	print_x(unsigned int nb, t_printf *args)
 	args->space = 0;
 	args->plus = 0;
 	if (nb == 0 && args->precision == 0)
-		return (ft_putnchar(' ', args->width));
+		return (ft_putnchar_fd(' ', args->width, args->fd));
 	if (nb != 0 && args->precision < 0 && args->filler == '0' && args->hash)
 		args->precision = args->width - 2;
 	if (nb == 0)
