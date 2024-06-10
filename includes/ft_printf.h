@@ -50,7 +50,7 @@ int		ft_putnchar_fd(char c, int n, int fd);
 int		ft_putnstr_fd(char *str, int n, int fd);
 
 int		pf_get_nb_len(long nbr, char *base);
-int		pf_putnbr_base(long nbr, char *base, t_printf *args);
+int		pf_putnbr_base(long nbr, char *base, t_printf *args, int fd);
 int		print_number(long nb, t_printf *args, char *base);
 
 int		print_c(char c, t_printf *args);

@@ -29,7 +29,7 @@ int	pf_get_nb_len(long nbr, char *base)
 	return (res);
 }
 
-int	pf_putnbr_base(long nbr, char *base, t_printf *args)
+int	pf_putnbr_base(long nbr, char *base, t_printf *args, int fd)
 {
 	int		radix;
 	int		res;
@@ -52,8 +52,8 @@ int	pf_putnbr_base(long nbr, char *base, t_printf *args)
 		ft_putnchar_fd('0', args->precision - pf_get_nb_len(nbr, base), args->fd);
 	}
 	if (nbr >= radix)
-		pf_putnbr_base(nbr / radix, base, NULL);
-	ft_putnchar_fd(base[nbr % radix], 1, args->fd);
+		pf_putnbr_base(nbr / radix, base, NULL, fd);
+	ft_putnchar_fd(base[nbr % radix], 1, fd);
 	return (res);
 }
 
@@ -78,7 +78,7 @@ int	print_number(long nb, t_printf *args, char *base)
 		args->filler = ' ';
 	res += ft_putnchar_fd(args->filler, (!args->minus) * (args->width
 				- nb_len - (args->plus || args->space) - 2 * args->hash), args->fd);
-	res += pf_putnbr_base(nb, base, args);
+	res += pf_putnbr_base(nb, base, args, args->fd);
 	res += ft_putnchar_fd(' ', (args->minus) * (args->width
 				- nb_len - (args->plus || args->space) - 2 * args->hash), args->fd);
 	return (res);
