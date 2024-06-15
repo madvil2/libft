@@ -38,7 +38,7 @@ void	dumpster_push(t_deque *deque, void *ptr)
 	deque->size++;
 }
 
-static t_deque	**get_dumpster(int flag)
+t_deque	**get_dumpster(int flag)
 {
 	static t_deque	*perm;
 	static t_deque	*temp;

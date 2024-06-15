@@ -96,6 +96,7 @@ void			str_copy(t_list *list, char *str);
 
 //garbage_collector.c
 void			dumpster_push(t_deque *deque, void *ptr);
+t_deque			**get_dumpster(int flag);
 void			gc_free(int flag);
 int				set_allocator(int flag);
 void			*ft_malloc(size_t size);
