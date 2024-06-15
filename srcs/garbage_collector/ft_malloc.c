@@ -12,7 +12,7 @@
 
 #include "../../includes/libft.h"
 
-static void	dumpster_push(t_deque *deque, void *ptr)
+void	dumpster_push(t_deque *deque, void *ptr)
 {
 	t_deque_node	*node;
 

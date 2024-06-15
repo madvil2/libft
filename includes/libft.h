@@ -33,6 +33,8 @@ typedef struct s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct s_deque		t_deque;
+
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isalnum(int c);
@@ -93,6 +95,7 @@ void			clear_list(t_list **list);
 void			str_copy(t_list *list, char *str);
 
 //garbage_collector.c
+void			dumpster_push(t_deque *deque, void *ptr);
 void			gc_free(int flag);
 int				set_allocator(int flag);
 void			*ft_malloc(size_t size);
