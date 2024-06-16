@@ -69,8 +69,8 @@ void	clear_list(t_list **list)
 	int		j;
 	char	*buf;
 
-	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	clear_node = malloc(sizeof(t_list));
+	buf = ft_malloc((BUFFER_SIZE + 1) * sizeof(char));
+	clear_node = ft_malloc(sizeof(t_list));
 	if (!buf || !clear_node)
 		return ;
 	last_node = ft_lstlast(*list);

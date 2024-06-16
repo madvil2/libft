@@ -18,7 +18,7 @@ static void	join_list(t_list **list, char *buf)
 	t_list	*last_node;
 
 	last_node = ft_lstlast(*list);
-	new_node = malloc(sizeof(t_list));
+	new_node = ft_malloc(sizeof(t_list));
 	if (!new_node)
 		return ;
 	if (!last_node)
@@ -56,7 +56,7 @@ static void	save_list(t_list **list, int fd)
 
 	while (!is_newline(*list))
 	{
-		buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
+		buf = ft_malloc((BUFFER_SIZE + 1) * sizeof(char));
 		if (!buf)
 			return ;
 		read_char = read(fd, buf, BUFFER_SIZE);
@@ -78,7 +78,7 @@ static char	*make_line(t_list *list)
 	if (!list)
 		return (NULL);
 	len = line_len(list);
-	str = malloc((len + 1) * sizeof(char));
+	str = ft_malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str_copy(list, str);
