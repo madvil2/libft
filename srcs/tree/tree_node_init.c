@@ -16,7 +16,7 @@ t_tree	*tree_node_init(void *content)
 {
 	t_tree	*res;
 
-	res = malloc(sizeof(t_tree));
+	res = ft_malloc(sizeof(t_tree));
 	res->prev = NULL;
 	res->child = deque_init();
 	res->nb_child = 0;
