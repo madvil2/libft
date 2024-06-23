@@ -114,7 +114,8 @@ FILES :=			ft_isalpha\
 					tree_add_child\
 					tree_node_init\
 					tree_pop_child\
-					tree_add_node
+					tree_add_node\
+					ft_strcmp
 
 HDRS :=				$(addprefix $(INC_PATH), $(addsuffix .h, $(HFILES)))
 SRCS :=				$(addsuffix .c, $(FILES))
