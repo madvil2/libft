@@ -62,7 +62,7 @@ static void	save_list(t_list **list, int fd)
 		read_char = read(fd, buf, BUFFER_SIZE);
 		if (!read_char)
 		{
-			free(buf);
+			//free(buf);
 			return ;
 		}
 		buf[read_char] = '\0';
@@ -96,8 +96,8 @@ char	*get_next_line(int fd)
 		while (list)
 		{
 			tmp = list->next;
-			free(list->content);
-			free(list);
+			//free(list->content);
+			//free(list);
 			list = tmp;
 		}
 		list = NULL;
@@ -107,6 +107,6 @@ char	*get_next_line(int fd)
 	if (!list)
 		return (NULL);
 	next_line = make_line(list);
-	clear_list(&list);
+	//clear_list(&list);
 	return (next_line);
 }
