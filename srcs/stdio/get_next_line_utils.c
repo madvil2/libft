@@ -47,8 +47,8 @@ void	free_list(t_list **list, t_list *clear_node, char *buf)
 	while (*list)
 	{
 		temp = (*list)->next;
-		free((*list)->content);
-		free(*list);
+		//free((*list)->content);
+		//free(*list);
 		*list = temp;
 	}
 	*list = NULL;
@@ -56,8 +56,9 @@ void	free_list(t_list **list, t_list *clear_node, char *buf)
 		*list = clear_node;
 	else
 	{
-		free(buf);
-		free(clear_node);
+        (void)buf;
+		//free(buf);
+		//free(clear_node);
 	}
 }
 

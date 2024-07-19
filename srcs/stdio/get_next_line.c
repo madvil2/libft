@@ -107,6 +107,6 @@ char	*get_next_line(int fd)
 	if (!list)
 		return (NULL);
 	next_line = make_line(list);
-	//clear_list(&list);
+	clear_list(&list);
 	return (next_line);
 }
