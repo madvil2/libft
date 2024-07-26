@@ -108,6 +108,7 @@ FILES :=			ft_isalpha\
 					deque_swap\
 					deque_print\
 					deque_to_arr\
+					deque_copy\
 					ft_malloc\
 					hashtable\
 					hash\
