@@ -45,6 +45,7 @@ struct	s_deque
 	int				size;
 };
 
+t_deque			*deque_copy(t_deque *deque);
 t_deque			*deque_init(void);
 void			deque_iter(t_deque *deque, void (*f)(void *ptr));
 t_deque_node	*deque_node_init(void *content);
