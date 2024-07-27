@@ -6,6 +6,7 @@ t_deque	*deque_copy(t_deque *deque)
 	int				i;
 	t_deque			*res;
 	t_deque_node	*new_node;
+	char			*new_str;
 
 	res = deque_init();
 	i = -1;
@@ -13,7 +14,7 @@ t_deque	*deque_copy(t_deque *deque)
 	while (++i < deque->size)
 	{
 		new_node = deque_node_init(ft_strdup(travel->as_str));
-		deque_push_node_right(res, new_node);
+		deque_push_node_left(res, new_node);
 		travel = travel->next;
 	}
 	return (res);
