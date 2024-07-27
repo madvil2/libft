@@ -35,8 +35,8 @@ void	ht_resize(t_ht *ht)
 	new_value = ft_calloc(new_size, sizeof(char *));
 	ft_memcpy(new_key, ht->key, ht->size * sizeof(char *));
 	ft_memcpy(new_value, ht->value, ht->size * sizeof(char *));
-	free(ht->key);
-	free(ht->value);
+//	free(ht->key);
+//	free(ht->value);
 	ht->key = new_key;
 	ht->value = new_value;
 	ht->size = new_size;
@@ -61,8 +61,8 @@ void	ht_delete(t_ht *ht, char *key)
 		if (counter == ht_size)
 			return ;
 	}
-	free(ht->key[hash % ht_size]);
-	free(ht->value[hash % ht_size]);
+//	free(ht->key[hash % ht_size]);
+//	free(ht->value[hash % ht_size]);
 	ht->key[hash % ht_size] = NULL;
 	ht->value[hash % ht_size] = NULL;
 	ht->nb_entry--;
