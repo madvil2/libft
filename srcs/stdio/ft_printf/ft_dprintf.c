@@ -12,6 +12,18 @@
 
 #include "ft_printf.h"
 
+static void	restore_flags(t_printf *args, int fd)
+{
+	args->fd = fd;
+	args->hash = 0;
+	args->minus = 0;
+	args->plus = 0;
+	args->space = 0;
+	args->filler = ' ';
+	args->precision = -1;
+	args->width = -1;
+}
+
 int	ft_dprintf(int fd, const char *format, ...)
 {
 	int			offset;
@@ -25,8 +37,7 @@ int	ft_dprintf(int fd, const char *format, ...)
 	args.res = 0;
 	while (format[offset])
 	{
-		(args.fd = fd, args.hash = 0, args.minus = 0, args.plus = 0,
-				args.space = 0, args.filler = ' ', args.precision = -1, args.width = -1, free(NULL));
+		restore_flags(&args, fd);
 		if (format[offset] == '%')
 			args.res += print_conversion(format, ap, &args, &offset);
 		else

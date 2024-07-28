@@ -12,9 +12,9 @@
 
 #ifndef TREE_H
 # define TREE_H
-#include "deque.h"
+# include "deque.h"
 
-typedef struct s_tree	t_tree;
+typedef struct s_tree		t_tree;
 typedef struct s_ast_node	t_ast_node;
 typedef struct s_token		t_token;
 typedef struct s_nonterm	t_nonterm;

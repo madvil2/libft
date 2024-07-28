@@ -24,8 +24,8 @@ typedef struct s_ht
 }	t_ht;
 
 //hash.c
-int	wlfsbrg12(const char *str);
 void	ht_print(t_ht *ht);
+int		wlfsbrg12(const char *str);
 
 //hashtable.c
 t_ht	*ht_init(int size);

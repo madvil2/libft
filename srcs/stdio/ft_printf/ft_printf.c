@@ -95,6 +95,18 @@ int	print_conversion(const char *s, va_list ap, t_printf *args, int *offset)
 	return (1);
 }
 
+static void	restore_flags(t_printf *args)
+{
+	args->fd = STDIN_FILENO;
+	args->hash = 0;
+	args->minus = 0;
+	args->plus = 0;
+	args->space = 0;
+	args->filler = ' ';
+	args->precision = -1;
+	args->width = -1;
+}
+
 int	ft_printf(const char *format, ...)
 {
 	int			offset;
@@ -108,8 +120,7 @@ int	ft_printf(const char *format, ...)
 	args.res = 0;
 	while (format[offset])
 	{
-		(args.fd = 1, args.hash = 0, args.minus = 0, args.plus = 0,
-		 args.space = 0, args.filler = ' ', args.precision = -1, args.width = -1, free(NULL));
+		restore_flags(&args);
 		if (format[offset] == '%')
 			args.res += print_conversion(format, ap, &args, &offset);
 		else

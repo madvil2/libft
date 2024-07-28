@@ -49,7 +49,8 @@ int	pf_putaddr_base(uintptr_t nbr, char *base, t_printf *args)
 			res += ft_putnchar_fd('0', 1, args->fd);
 			res += ft_putnchar_fd(args->conversion, 1, args->fd);
 		}
-		ft_putnchar_fd('0', args->precision - pf_get_addr_len(nbr, base), args->fd);
+		ft_putnchar_fd('0', args->precision
+			- pf_get_addr_len(nbr, base), args->fd);
 	}
 	if (nbr >= radix)
 		pf_putaddr_base(nbr / radix, base, NULL);

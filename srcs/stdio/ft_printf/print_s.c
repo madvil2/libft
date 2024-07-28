@@ -30,7 +30,8 @@ int	print_s(char *str, t_printf *args)
 	}
 	else
 	{
-		res += ft_putnchar_fd(' ', args->width - ft_strlen(str) * (ft_strlen(str)
+		res += ft_putnchar_fd(' ', args->width
+				- ft_strlen(str) * (ft_strlen(str)
 					<= (size_t)args->precision) - args->precision
 				* (ft_strlen(str) > (size_t)args->precision), args->fd);
 		res += ft_putnstr_fd(str, args->precision, args->fd);
